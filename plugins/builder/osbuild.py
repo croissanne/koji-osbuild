@@ -374,8 +374,8 @@ class Client:
         self.url = urllib.parse.urljoin(url, API_BASE)
         self.http = requests.Session()
 
-        retries = Retry(total=5,
-                        backoff_factor=0.1,
+        retries = Retry(total=15,
+                        backoff_factor=0.3,
                         status_forcelist=[500, 502, 503, 504],
                         raise_on_status=False
                         )
